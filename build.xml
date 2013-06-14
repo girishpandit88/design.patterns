@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <project name="DesignPatternsForJava" basedir="." default="jar">
-    <property name="src" value="src"/>
+    <property name="src" value="design.patterns"/>
     <property name="output" value="bin"/>
  
 	<target name="clean">
