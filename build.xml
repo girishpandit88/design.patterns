@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<project name="DesignPatternsForJava" basedir="." default="jar">
+    <property name="src" value="src"/>
+    <property name="output" value="bin"/>
+ 
+	<target name="clean">
+	        <delete dir="${output}"/>
+	</target>
+	
+	<target name="create" depends="clean">
+	        <mkdir dir="${output}"/>
+	</target>
+	
+	<target name="compile" depends="create">
+        <javac destdir="bin">
+            <src path="${src}"/>
+            <classpath refid="java"/>
+        </javac>
+    </target>
+ 
+    <target name="jar" depends="compile">
+        <jar destfile="test.jar">
+            <fileset dir="bin"/>
+        </jar>
+    </target>
+ 
+    <path id="java">
+        <fileset dir=".">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+</project>
